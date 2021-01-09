@@ -1,3 +1,4 @@
-### gitignore dot file to ignore the pdf and ppt files
+### gitignore dot file to ignore and exclude all pdf and ppt files
 
 *.pdf
+*.ppt
