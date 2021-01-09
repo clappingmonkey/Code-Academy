@@ -1,0 +1,3 @@
+### gitignore dot file to ignore the pdf and ppt files
+
+*.pdf
