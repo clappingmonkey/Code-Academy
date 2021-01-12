@@ -5,7 +5,7 @@ int vdigniBitNa(int a, int pos);
 int main(void){
     int a = 50;
     int pos = 3;
-    printf("Change the value of the byte of number: %d on position: %d.\nThe new number after the change is: %d\n", a, pos, vdigniBitNa(a,pos));
+    printf("Raise the value of byte of number: %d on position: %d.\nThe new number after the change is: %d\n", a, pos, vdigniBitNa(a,pos));
     return 0;
 }
 

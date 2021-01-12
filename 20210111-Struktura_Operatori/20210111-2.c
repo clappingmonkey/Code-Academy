@@ -6,7 +6,7 @@ int main(void){
     int a = 5;
     int ind = 2;
     vzemiBitNa(a, ind);
-    printf("%d\n", vzemiBitNa(a,ind));
+    printf("Number %d with byte position %d in it is with value - %d\n", a,  ind, vzemiBitNa(a,ind));
     return 0;
 }
 
