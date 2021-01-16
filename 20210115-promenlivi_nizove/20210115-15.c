@@ -6,11 +6,9 @@ int main(void){
     test();
     test();
     test();
-    printf("var is - %d\n", test());
 
 }
-
-int test(){
+int test(void){
     static int var = 3;
     var++;
     printf("var is: %d\n", var);
