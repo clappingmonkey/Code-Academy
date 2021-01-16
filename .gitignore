@@ -1,4 +1,9 @@
-### gitignore dot file to ignore and exclude all pdf and ppt files
+### gitignore dot file to ignore and exclude file and folders
 
+#ignored file formats
 *.pdf
 *.ppt
+
+#ignored folders
+
+/.vscode
