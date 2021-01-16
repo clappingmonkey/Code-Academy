@@ -1,17 +1,10 @@
 #include <stdio.h>
-#include <string.h>
-
-int my_strlen(char s[]){
-    int i = 0;
-    while (s[i] != '\0');
-    {
-        i++;
-    }
-    return i;
-}
 
 int main(void) {
-    int i;
     char s[] = "Hi";
-
+    int n;
+    n = sizeof(s)/sizeof(s[0]);
+    n--; /* Така премахване броенето на последния елемент в низа - \0 . */
+    printf("number of : %d\n", n);
+    return 0;
 }
