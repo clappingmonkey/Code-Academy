@@ -1,16 +1,18 @@
 #include <stdio.h>
 
-int g_var = 3;
+extern int g_var;
 void test();
 
 int main(void){
+    printf("The original value of g_var is %d\n", g_var);
     test();
     test();
     test();
-    printf("g_var is - %d\n", g_var);
+    printf("The last value of g_var is %d\n", g_var);
 
 }
 
+int g_var = 3;
 void test(){
     g_var++;
     printf("g_var is: %d\n", g_var);
