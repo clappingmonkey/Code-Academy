@@ -10,6 +10,11 @@ int main(void){
     printf("Ako zelaete karavana natisnete - 1\n");
     printf("Ako zelaete kemper natisnete - 2\n");
     scanf("%d", &rez);
-    printf("Vie izbrahte izbor - %d\n", rez);
+    if ( rez == 1) {
+        printf("Vie izbrahte opciq %d i dalzhite %d lv\n", rez, cenaKaravani);
+    } else {
+        printf("Vie izbrahte opciq %d i dalzhite %d lv\n", rez, cenaKemperi);
+    }
+    printf("Iskate li oshte nalichni produkti?\n");
     return 0;
 }
