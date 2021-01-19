@@ -11,7 +11,7 @@ int main(void)
     int y = 10;
     int true, false;
 
-    true = ++x + x || y;
+    true = ++x || y;
     printf("The value of true is %d\n", true);
     return 0;
 }

@@ -2,7 +2,8 @@
 
 /* Упражнение 12. Relational operators */
 
-int main(){
+int main()
+{
     int nX, nY = 20;
     printf("Enter value for X: ");
     scanf("%d", &nX);
