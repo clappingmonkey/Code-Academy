@@ -3,6 +3,8 @@
 #ignored file formats
 *.pdf
 *.ppt
+*xls
+*.xlsx
 
 #ignored folders
 
