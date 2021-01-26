@@ -12,7 +12,7 @@ int main(void){
     char a = 255;
     printf("a is: %d and in binary is: ", a);
     bin(a);
-    char b = 10;
+    int b = 140000;
     printf("b is: %d and in binary is: ", b);
     bin(b);
     char c = a + b;
