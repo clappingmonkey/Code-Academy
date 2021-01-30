@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "f.h"
+#include <math.h>
 
 /* апишете програма на С, която съдържа 3 функции,
 изнесете прототипите им в отделен .h файл.
@@ -24,7 +25,8 @@ b.
 
 int main(void){
     
-    int a, b= 0;
+    int a, b, c = 0;
+    float N = 0;
 
     printf("Enter value for a: ");
     scanf("%d", &a);
@@ -32,14 +34,16 @@ int main(void){
     scanf("%d", &b);
 
     leastCommon(a,b);
+
+    printf("Enter number to return it\'s absolute value: ");
+    scanf("%f", &N);
     
-    absoluteValue();
+    printf("\nThe absolute number is %.2f\n", absoluteValue(N));
 
-      
+    printf("\nEnter number to calculate square of it: ");
+    scanf("%d", &c);
 
-
-
-
+    sqrOfNum(c);
 
     return 0;
 }
