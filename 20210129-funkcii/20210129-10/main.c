@@ -24,7 +24,7 @@ b.
 
 int main(void){
     
-    int a, b, n = 0;
+    int a, b= 0;
 
     printf("Enter value for a: ");
     scanf("%d", &a);
@@ -32,10 +32,9 @@ int main(void){
     scanf("%d", &b);
 
     leastCommon(a,b);
+    
+    absoluteValue();
 
-    printf("Enter number to return it\'s absolute value: ");
-    scanf("%d", n);
-    printf("The absolute value of %d is %d\n", n, absoluteValue(n));
       
 
 

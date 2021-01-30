@@ -3,29 +3,28 @@
 /* Напишете програма на С, която чрез функция да обръща
 десетични числа в двоични. */
 
-long deciKumBin(int num);
+void deciKumBin(int n);
 
 int main(void){
-    int num = 0;
+    int A = 0;
 
-    printf("Enter a number: \n");
-    scanf("%d", num);
-    long A = deciKumBin(num);
-
-    printf("The number  is %ld\n", A);
+    printf("Enter a number: ");
+    scanf("%d", &A);
+    printf("The binary number is:");
+    deciKumBin(A);
     
     return 0;
 }
 
-long deciKumBin(int num){
-    int rem = 0;
-    long binary, i = 0;
+void deciKumBin(int n){
+    int j;
   
-    while(num != 0) {
-        rem = num % 2;
-        num = num / 2;
-        binary = binary + (rem * i);
-        i = i * 10;
+    for(int i = 31; i >= 0; i--){
+        j = n >> i;        
+        if(j & 1){
+            printf("1");
+        } else {
+            printf("0");
+            }
     }
-    return binary;
 }

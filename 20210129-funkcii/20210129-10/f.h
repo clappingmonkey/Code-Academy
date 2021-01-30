@@ -1,3 +1,3 @@
 int leastCommon( int a, int b);
-int absoluteValue(int n);
+float absoluteValue();
 int sqrOfNum(int n);

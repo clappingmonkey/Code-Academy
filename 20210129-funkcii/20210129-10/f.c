@@ -13,9 +13,18 @@ int leastCommon( int a, int b){
     return max;
 }
 
-int absoluteValue(int n){
+float absoluteValue(){
+
+    float n = 0.0;
+    
+    printf("Enter number to return it\'s absolute value: ");
+    scanf("%d", n);
+
     if(n < 0){
-        n =  (-1) * n;
+        n =  -1 * n;
+        printf("The entered number is negative and it\'s absolute value is %f\n", n);
+    } else {
+        printf("The entered number is positive, it\'s absolute value is %f\n", n);
     }
     return n;
 }

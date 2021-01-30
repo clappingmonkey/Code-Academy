@@ -5,7 +5,6 @@
 
 void evenOrNot();
 
-
 int main(void){
 
     evenOrNot();
@@ -13,16 +12,15 @@ int main(void){
     return 0;
 }
 
-
 void evenOrNot(){
     int num = 0;
 
-    printf("Enter number to check if it\'s odd or even \n");
+    printf("Enter number to check if it\'s odd or even: ");
     scanf("%d", &num);
 
     if(num % 2 == 0){
-        printf("%d is even\n", num);
+        printf("\n%d is even\n", num);
     } else {
-        printf("%d is odd\n", num);
+        printf("\n%d is odd\n", num);
     }
 }

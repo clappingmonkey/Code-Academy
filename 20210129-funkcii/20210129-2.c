@@ -12,7 +12,7 @@ scanf("%lf", &r);
 extern const float PI;
 
 float faceSqr(float r);
-float area(void);
+void area();
 
 int main(void){
     area();
@@ -23,10 +23,10 @@ float faceSqr(float r){
     return PI * (r * r);
 }
 
-float area(void){
+void area(){
     float r = 0;
 
-    printf("Enter value for R \n");
+    printf("Enter value for R: ");
     scanf("%f", &r);
 
     printf("The face is %.2lf\n", faceSqr(r));    
