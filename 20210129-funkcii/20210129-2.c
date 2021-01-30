@@ -1,6 +1,14 @@
 #include <stdio.h>
 
-const float PI = 3.14;
+/* Напишете функция area() без параметри. Поискайте от
+потребителя да въведе радиуса с помощта на функциите :
+printf("Enter a radius\n");
+scanf("%lf", &r);
+Използвайте горната функция 1.за изчисляване на площта на кръг,
+която написахме преди малко за да изчислите площта на кръга с този
+радиус и върнете резултата: */
+
+extern const float PI;
 
 float faceSqr(float r);
 float area(void);
@@ -17,8 +25,10 @@ float faceSqr(float r){
 float area(void){
     float r = 0;
 
-    printf("enter value for R \n");
+    printf("Enter value for R \n");
     scanf("%f", &r);
 
-    printf("the face is %.2lf\n", faceSqr(r));    
+    printf("The face is %.2lf\n", faceSqr(r));    
 }
+
+const float PI = 3.14;
