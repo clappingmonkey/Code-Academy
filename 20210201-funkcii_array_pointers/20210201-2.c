@@ -17,8 +17,7 @@ double atof(char *s);
 int main(void){
 
     char s[] = "123.456789";
-    printf("%f", atof(s));
-
+    printf("%f\n", atof(s));
 
     return 0;
 }
@@ -26,17 +25,17 @@ int main(void){
 
 double atof(char *s){
     int i = 0;
-    double leftNum = 0, rightNum = 0, power = 1.0;
+    double leftNum = 0, rightNum = 0, power = 1;
 
-    while (s[i] >= '0' && s[i] <= '9'){
+    while (s[i] >= '0' && s[i] <= '9')
         leftNum = 10 * leftNum + (s[i++] - '0');
         i++;
-    }
 
     while (s[i] >= '0' && s[i] <= '9'){
-        rightNum = 10 * rightNum + (s[i++] - '0');
+        rightNum = 10 * rightNum + (s[i] - '0');
+        i++;
         power *= 0.1;
     }
 
-    return leftNum + (rightNum * power);
+    return leftNum + rightNum * power;
 }
