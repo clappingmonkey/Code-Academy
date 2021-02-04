@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 /* Използвайте do-while цикъл, за да напишете функцията void
 itoa(int n, char s[ ]), която преобразува число в символен низ (обратната
@@ -12,14 +13,38 @@ itoa(int n, char s[ ]), която преобразува число в симв
 reverse(char s[]); от задача 18 , за да обърнем низа. */
 
 void itoa(int n, char s[]);
+void reverse(char s[]);
 
 int main(void){
+    int n = 12345;
+    char s[6];
+    itoa(n, s);
+    reverse(s);
 
 
     return 0;
 }
 
 void itoa(int n, char s[]){
+    do{
+        n %= 10;
+        n += 0;
+
+        
+    } while (n != 0);
+    
 
 
+}
+
+void reverse(char s[]){
+    char temp;
+    int i = 0, j = strlen(s) - 1;
+
+    for(; i < j; i++, j--){
+        temp = s[i];
+        s[i] = s[j];
+        s[j] = temp;
+    }
+    printf("The reversed array is: %s\n", s);
 }

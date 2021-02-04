@@ -1,11 +1,10 @@
 #include <stdio.h>
 
-/* декларирайте три масива с три елемента:
+/* принтирайте последния елемент от
+декларираните по горе масиви:
 Първият от тип char
 Вторият от тип int
-Третият от тип double
-Отпечатайте размерите на масивите използвайки
-оператора sizeof(arr); */
+Третият от тип double */
 
 
 int main(void){
@@ -14,11 +13,13 @@ int main(void){
 
     int b[] = {123};
 
-    double c[] = {123};
+    double c[] = {1.0, 2.5, 3.14};
 
     printf("The size of arr a is %d\n", sizeof(a));
     printf("The size of arr a is %d\n", sizeof(b));
     printf("The size of arr a is %d\n", sizeof(c));
+
+    printf("%s\n %d\n %f\n", a, b, c[2]);
 
 
 
