@@ -18,23 +18,22 @@ void reverse(char s[]);
 int main(void){
     int n = 12345;
     char s[6];
-    itoa(n, s);
-    reverse(s);
 
+    itoa(n, s);
 
     return 0;
 }
 
 void itoa(int n, char s[]){
+    int i = 0;
+
     do{
-        n %= 10;
-        n += 0;
+        s[i] = (n % 10) + '0';
+        n /= 10;
+        i++;        
+    } while (n > 0);
 
-        
-    } while (n != 0);
-    
-
-
+    reverse(s);
 }
 
 void reverse(char s[]){
