@@ -3,23 +3,23 @@
 /* Напишете функция, която прави същото, както в задача
 6, но е рекурсивна. */
 
-int multi(int a, int b);
+int multi(void);
 
 int main(void){
 
     printf("The result of every multiplication of every number between 1 to 30 is:\n");
-    multi(1, 30);
+    multi();
 
     return 0;
 }
 
-int multi(int a, int b){
-    int res = 0;
+int multi(void){
+    int a = 1, b = 30, res = 0;
     while (b > a){
         res = a * b;
         printf("The rez is: %d\n", res);
-        //a++;
-        multi(a++, b);       
+        a++;       
     }
+    multi();
     return res;
 }
