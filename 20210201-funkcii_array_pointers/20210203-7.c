@@ -20,6 +20,9 @@ int multi(void){
         printf("The rez is: %d\n", res);
         a++;       
     }
-    multi();
-    return res;
+    if(b > a){
+        return multi();
+    } else {
+        return 0;
+    }
 }
