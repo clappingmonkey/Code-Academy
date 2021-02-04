@@ -12,12 +12,14 @@ x), която получава като първи аргумент начал�
 Тогава връщаме номера на който се намира елемента в масива
 или -1 ако не се съдържа в масива. */
 
+int printArr(int a[], int lenght);
+
 int binarySearch(int a[], int lenght, int num);
 
 int main(void)
 {
     int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int lenght = sizeof(a) / sizeof(a[0]);
+    int lenght = sizeof(a) / sizeof(int);
     int num = 0;
 
     printf("Please enter number to search in the array? ");
@@ -25,34 +27,42 @@ int main(void)
 
     binarySearch(a, lenght, num);
 
+    printArr(a, lenght);
+
     return 0;
 }
 
 int binarySearch(int a[], int lenght, int num)
 {
-    int first = 0;
-    int middle = (first + lenght) / 2;
+    int first = 0, middle = 0, flag = 0;
+    int last = lenght - 1;
 
-    while (first <= lenght)
-    {
-        if (a[middle] < num)
-        {
-            first = middle + 1;
-        }
-        else if (a[middle] == num)
-        {
-            printf("%d is present at index %d\n", num, middle + 1);
+    while (first <= last){
+        middle = (first + last) / 2;
+        if(num == a[middle]){
+            flag = 1;
             break;
-        }
-        else
-        {
-            lenght = middle - 1;
-            middle = (first + lenght) / 2;
+        } else if( num > a[middle]) {
+            first = middle + 1;
+        } else {
+            last = middle - 1;
         }
     }
-    if (first > lenght)
-    {
-        printf("Not found %d is not present\n", num);
+    if(flag == 1){
+        printf("\nFound the number at position %d\n", middle + 1);
+        return 0;
+    } else {
+        printf("\nNumber not found. Sorry.\n");
+        return -1;
     }
-    return -1;
+}
+
+int printArr(int a[], int lenght){
+    int i = 0;
+
+    printf("The array contains of: ");
+    for (; i < lenght; i++){
+        printf("%d ", a[i]);
+    }
+    return 0;
 }
