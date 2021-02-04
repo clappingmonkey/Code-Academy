@@ -3,18 +3,20 @@
 /* Напишете функция int getline(char s[],int lim), която чете ред в
 s[] и връща дължината му */
 
-int getline(char s[], int lenght);
+int getLine(char s[], int lenght);
 
 int main(void){
-    char s[]="This is a test\nfor the purpose\nof a test";
-   /*  int lenght = sizeof(s) / sizeof(char); */
+    char s[]="This is a test for the purpose\nof a test";
+    int lenght = sizeof(s) / sizeof(char);
 
-    printf("%d",getline(s,25));
+    printf("The whole lenght of the array is %d\n", lenght);
+
+    printf("%d\n",getLine(s, lenght));
 
     return 0;
 }
 
-int getline(char s[], int lenght){
+int getLine(char s[], int lenght){
     int i, counter = 0;
 
     while(i < lenght && s[i] != '\0'){

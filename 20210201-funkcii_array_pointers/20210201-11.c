@@ -8,7 +8,10 @@ void squeeze(char s[], int c);
 int main(void){
 
     char s[] = "Character 13";
-    char c = 'a'; //a in decimal
+    char c = 'a';
+
+    printf("The original array is: %s\n", s);
+    printf("After the removal of all the %c is: ", c);
     
     squeeze(s, c);
 
@@ -17,13 +20,15 @@ int main(void){
 
 
 void squeeze(char s[], int c){
-    int i = 0;
-    int size = sizeof(s) / sizeof(s[0]); 
-
-    for(; i < size; i++){
-        if(s[i] = c){
-            s[i] = s[i + 1];
+    int i = 0, flag = 0;
+    do{
+        if(s[i + flag] == c){
+            flag++;
+            continue;
         }
-    }
-    printf("The new array is: %s", s);
+        s[i] = s[i + flag];
+        i++;
+    } while(s[i + flag] != '\0');
+    s[i] = '\0';
+    printf("%s",s);
 }
