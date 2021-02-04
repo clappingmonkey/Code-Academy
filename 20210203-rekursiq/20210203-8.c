@@ -18,13 +18,20 @@ int main(void){
     int lenght = sizeof(a) / sizeof(int);
 
     int *pointer = NULL;
-    pointer = &a;
+    pointer = a;
 
     pointer[2] = 5;
     pointer[3] = 33;
     pointer[4] -= 7;
     pointer[6] += 10;
     pointer[9] *= 3;
+
+/*  a[2] = 5;
+    a[3] = 33;
+    a[4] -= 7;
+    a[6] += 10;
+    a[9] *= 3;
+ */
 
     printArr(a, lenght);
 

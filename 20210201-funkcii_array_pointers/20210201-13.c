@@ -8,7 +8,7 @@ void lower(char s[]);
 int main(void){
 
     char s[] = "This Is A Test!";
-    printf("The array in the begining is %s\n", s);
+    printf("The array in the begining is: %s\n", s);
     lower(s);
 
 
@@ -17,11 +17,13 @@ int main(void){
 
 void lower(char s[]){
     int i = 0;
+    char lowerer = 32; /* from the ASCII table */
 
-    for(;s[i] != '\0'; i++){
+    while(s[i] != '\0'){
         if(s[i] >= 'A' && s[i] <= 'Z'){
-        s[i] = s[i] + 32;
+            s[i]+=lowerer;
         }
+        i++;
     }
-    printf("After the convert the new array is: %s\n", s); 
+    printf("After the lowerer is: %s\n", s);
 }

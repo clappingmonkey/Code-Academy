@@ -6,13 +6,11 @@
 стринга s[]. */
 
 void itob(int n, char s[], int b);
-void menu(int n, int b);
 
 int main(void){
-    int n, b = 0;
-    char s[20];
+    int n = 12345;
+    char s[32];
 
-    menu(n, b);
 
 
 

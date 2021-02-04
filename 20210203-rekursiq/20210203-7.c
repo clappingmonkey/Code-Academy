@@ -8,7 +8,19 @@
 
 int main(void){
 
-    int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int *pointer = NULL;
+    pointer = a;
+
+    printf("%d\n", pointer[3]);
+
+    pointer = &a[5];
+
+    printf("%d\n", pointer[3]);
+
+    pointer = a[7];
+
+    printf("%d\n", pointer);
 
 
 

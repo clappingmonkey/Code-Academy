@@ -12,8 +12,7 @@ x), която получава като първи аргумент начал�
 Тогава връщаме номера на който се намира елемента в масива
 или -1 ако не се съдържа в масива. */
 
-int binSearch(int a[], int lenght, int num);
-int printArr(int a[], int lenght);
+int binarySearch(int a[], int lenght, int num);
 
 int main(void){
     int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -23,14 +22,28 @@ int main(void){
     printf("Please enter number to search in the array? ");
     scanf("%d", &num);
 
-    linSearch(a, lenght, num);
-    printArr(a, lenght);
+    printf("%d\n", binarySearch(a, lenght, num));
+
+/*     binSearch(a, lenght, num); */
 
     return 0;
 }
 
-int binarySearch( int a[], int n, int x){
-    
-    
-    return 0;
+int binarySearch( int a[], int lenght, int num){
+    int i, begin = 0, end = 1;
+
+    while(end - begin > 1){
+        i = begin + (end - begin) / 2;
+        if(a[i] == num){
+            printf("%d\n", i);
+            return i;
+        } else if( a[i] < num){
+            begin = i;
+            printf("test\n");
+        } else {
+            end = i;
+        }
+    }    
+    printf("Sorry the wanted\n");
+    return -1;
 }

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 /* напишете функцията int any(char s1[], char s2[]), която
 връща първата позиция в низа s1, където се появява някой от
@@ -9,15 +8,33 @@
 int any(char s1[], char s2[]);
 
 int main(void){
-    char s1[] = "This is a test!";
-    char s2[strlen(s1)];
+    char s1[] = "Hello World";
+    char s2[] = "Green hollow";
+
+    printf("%d", any(s1, s2));
 
 
     return 0;
 }
 
 int any(char s1[], char s2[]){
+    int i, j, res = 0;
+    char flag = 0;
 
-
-    return 0;
+    while ( s1[i] != '\0'){
+        j = 0;
+        while(s2[j] != '\0'){
+            if(s1[i] == s2[j]){
+                flag = 1;
+                res = i;
+                break;
+            }
+            j++;
+        }
+        if(flag = 1){
+            break;
+        }
+        i++;
+    }
+    return res;
 }

@@ -8,11 +8,9 @@ void squeeze(char s[], int c);
 int main(void){
 
     char s[] = "Character 13";
-    int c = 97; //a in decimal
+    char c = 'a'; //a in decimal
+    
     squeeze(s, c);
-
-
-
 
     return 0;
 }

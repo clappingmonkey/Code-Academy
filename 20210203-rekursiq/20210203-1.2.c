@@ -9,20 +9,15 @@
 
 int main(void){
 
-    char a[] = {123};
+    char a[] = "abc";
 
-    int b[] = {123};
+    int b[] = {1, 2, 3};
 
-    double c[] = {1.0, 2.5, 3.14};
+    double c[] = {1.0, 2.5, 3.14, 4.55};
 
-    printf("The size of arr a is %d\n", sizeof(a));
-    printf("The size of arr a is %d\n", sizeof(b));
-    printf("The size of arr a is %d\n", sizeof(c));
-
-    printf("%s\n %d\n %f\n", a, b, c[2]);
-
-
-
+    printf("The size of arr a is %c\n", a[1]);
+    printf("The size of arr a is %d\n", b[2]);
+    printf("The size of arr a is %lf\n", c[3]);
 
     return 0;
 }
