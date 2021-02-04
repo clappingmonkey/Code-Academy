@@ -14,36 +14,45 @@ x), която получава като първи аргумент начал�
 
 int binarySearch(int a[], int lenght, int num);
 
-int main(void){
+int main(void)
+{
     int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int lenght = sizeof(a) / sizeof(int);
+    int lenght = sizeof(a) / sizeof(a[0]);
     int num = 0;
 
     printf("Please enter number to search in the array? ");
     scanf("%d", &num);
 
-    printf("%d\n", binarySearch(a, lenght, num));
-
-/*     binSearch(a, lenght, num); */
+    binarySearch(a, lenght, num);
 
     return 0;
 }
 
-int binarySearch( int a[], int lenght, int num){
-    int i, begin = 0, end = 1;
+int binarySearch(int a[], int lenght, int num)
+{
+    int first = 0;
+    int middle = (first + lenght) / 2;
 
-    while(end - begin > 1){
-        i = begin + (end - begin) / 2;
-        if(a[i] == num){
-            printf("%d\n", i);
-            return i;
-        } else if( a[i] < num){
-            begin = i;
-            printf("test\n");
-        } else {
-            end = i;
+    while (first <= lenght)
+    {
+        if (a[middle] < num)
+        {
+            first = middle + 1;
         }
-    }    
-    printf("Sorry the wanted\n");
+        else if (a[middle] == num)
+        {
+            printf("%d is present at index %d\n", num, middle + 1);
+            break;
+        }
+        else
+        {
+            lenght = middle - 1;
+            middle = (first + lenght) / 2;
+        }
+    }
+    if (first > lenght)
+    {
+        printf("Not found %d is not present\n", num);
+    }
     return -1;
 }
