@@ -9,15 +9,28 @@
 имаме грешка. Но не сме разгледали динамичното заделяне на памет с
 malloc. */
 
-void our_strcat( char *s, char *t);
+void our_strcat(char *s, char *t);
 
 int main(void){
+    char s[] = "This is test array";
+    char t[] = " and this is second test";
 
+    printf("The first array contain: %s\n", s);
+    printf("The secoond array contain: %s\n", t);
 
+    our_strcat(s, t);
+    printf("After the merge the first contain: %s\n", s);
 
     return 0;
 }
 
-void our_strcat( char *s, char *t){
+void our_strcat(char *s, char *t){
+    int i = 0, j = 0;
 
+    for(; s[i] != '\0'; i++);
+    for(; t[j] != '\0'; j++){
+        s[i] = t[j];
+        i++;
+    }
+        s[i] = '\0';
 }
