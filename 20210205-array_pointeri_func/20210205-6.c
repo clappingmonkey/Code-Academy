@@ -22,6 +22,8 @@ int main(void){
 void our_strcat(char *s, char *t){
     int i = 0, j = 0;
 
+    ==>
+
     for(; *s != '\0'; *s++);
     for(; *t != '\0'; *t++){
         *s = *t;
