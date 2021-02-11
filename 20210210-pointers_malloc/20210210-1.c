@@ -8,17 +8,15 @@ int arr[10] = {23, 91, 36, 4, 9, 99, 87, 11, 2, 33};
 
 int main(void){
     int arr[10] = {23, 91, 36, 4, 9, 99, 87, 11, 2, 33};
+    int lenght = sizeof(arr) / sizeof(arr[0]);
     int i = 0, evenSum = 0;
 
-    int *p = &arr[1];
+    int *p = arr;
 
-    for(;i < 10; i += 2){
+    for(;i < lenght; i += 2){
         evenSum += p[i];
     }
 
     printf("\n The sum of the even number is %d\n", evenSum);
-
-
-
     return 0;
 }
