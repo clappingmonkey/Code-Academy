@@ -21,6 +21,5 @@ int main(){
             printf("not a valid input\n");
             break;
     }
-    
     return 0;
 }
