@@ -4,45 +4,41 @@
 /* Заделяне и освобождаване на памет - malloc, free. Заделете
 динамично памет за масив и попълнете елементите */
 
-extern const char NEWLINE;
+const char NEWLINE;
+extern int g_lenght;
 
 int main(void){
-
-    unsigned uIdNum = 0;
-    unsigned uNumOfElem = 0;    
-    int *piVal = NULL;
-    int iSum = 0;
+    int *arr = NULL;
+    int i = 0, temp;
 
     printf("Enter number of elements: ");
-    scanf("%d", &uNumOfElem);
+    scanf("%d", &g_lenght);
 
-    piVal = (int*)malloc(uNumOfElem * sizeof(int));
+    arr = (int*)malloc(g_lenght * sizeof(int));
 
-    if(NULL == piVal){
+    if(NULL == arr){
         printf("Allocation error!\n");
         return 1;
     }
 
-    printf("\nAddress of iSum: %p, Pointer value: %p\n", &iSum, piVal);
-    printf("Elements after the malloc operation: %u \n", uIdNum);
-    printf("\nAllocated memory addresses: ");
-
-    for (uIdNum = 0; uIdNum < uNumOfElem; uIdNum++){
-        printf("%p, ", (piVal + uIdNum));
+    for(; i < g_lenght; i++){
+        printf("Enter element value: ");
+        scanf("%d", &temp);
+        arr[i] = temp;
     }
 
-    printf("%c%c", NEWLINE, NEWLINE);
-
-    for (uIdNum = 0; uIdNum < uNumOfElem; uIdNum++){
-        printf("Enter %dth element: ", uIdNum);
-        scanf("%d", piVal + uIdNum);
-        iSum += *(piVal + uIdNum);
+    for(i = 0; i < g_lenght; i++){
+        printf("On position [%d] is %d with address: %p%c", i, arr[i], &arr[i], NEWLINE);
     }
-    
-    printf("\nSum of elements: %d\n", iSum);
-    free(piVal);
+
+    printf("After the free operation:%c", NEWLINE);
+    free(arr);
+    for(i = 0; i < g_lenght; i++){
+        printf("On position [%d] is %d with address: %p%c", i, arr[i], &arr[i], NEWLINE);
+    }
     
     return 0;
 }
 
+int g_lenght = 0;
 const char NEWLINE = '\n';

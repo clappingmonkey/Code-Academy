@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Заделете динамично с malloc памет за char* buffer с размер size = 2,
+/* Заделете динамично с malloc памет за char* buffer с размер  iSize = 2,
 въвеждайте символи от конзолата с getchar() ги четете, записвайте ги в
 буфера. Увеличавайте размера на буфера преди да се препълни с
 realloc().
@@ -10,15 +10,15 @@ realloc().
 const char NEWLINE;
 
 int main(void){
-    int c, count = 0, size = 2;
+    int c, count = 0, iSize = 2;
     char *buffer;
 
-    buffer = malloc(sizeof(char) * size);
+    buffer = malloc(sizeof(char) *  iSize);
 
     while((c = getchar()) != EOF){
-        if(count == size - 1){
-            size = size * 2;
-            buffer == realloc(buffer, size);
+        if(count ==  iSize - 1){
+             iSize =  iSize * 2;
+            buffer == realloc(buffer,  iSize);
         }
         buffer[count++] = c;
     }

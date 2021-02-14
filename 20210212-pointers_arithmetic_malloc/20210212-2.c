@@ -3,7 +3,7 @@
 
 /* Разширяване на заделена памет с realloc */
 
-extern const char NEWLINE;
+const char NEWLINE;
 
 int main(void){
 

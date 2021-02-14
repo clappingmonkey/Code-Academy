@@ -8,40 +8,58 @@
 използвайте функция, която прави това. */
 
 const char NEWLINE;
+extern int g_lenght;
+
+void arrExtender(int *arr);
 
 int main(void){
-    int *piVal = NULL;
-    unsigned uSize = 0;
+    int *arr = NULL;
+    int i = 0, temp;
 
-    printf("%cEnter size: ", NEWLINE);
-    scanf("%u", &uSize);
+    printf("%cEnter number of elements: ", NEWLINE);
+    scanf("%d", &g_lenght);
 
-    piVal = (int*)malloc(uSize * sizeof(int));
+    arr = (int*)malloc(g_lenght * sizeof(int));
 
-    if(NULL == piVal){
+    if(NULL == arr){
         printf("Allocation error!!%c", NEWLINE);
         
         return 1;
     }
 
-    printf("Addresses of allocated memory: %p%c", piVal, NEWLINE);
+    for(i = 0; i < g_lenght; i++){
+        printf("Enter element value: ");
+        scanf("%d", &temp);
+        arr[i] = temp;
+    }
+
+    for(i = 0; i < g_lenght; i++){
+        printf("On position [%d] is %d with address: %p%c", i, arr[i], &arr[i], NEWLINE);
+    }
 
     printf("%cEnter the new size: ", NEWLINE);
-    scanf("%u", &uSize);
+    scanf("%u", &g_lenght);
 
-    piVal == realloc(piVal, uSize * sizeof(int));
-    
-    if(NULL == piVal){
+    arrExtender(arr);
+
+    if(NULL == arr){
         printf("Reallocation error!!%c", NEWLINE);
 
         return 2;
     }
 
-    printf("The addresses of reallocated memory: %p%c", piVal, NEWLINE);
+    for(i = 0; i < g_lenght; i++){
+        printf("On position [%d] is %d with address: %p%c", i, arr[i], &arr[i], NEWLINE);
+    }
 
-    free(piVal);
+    free(arr);
     
     return 0;
 }
 
+void arrExtender(int *arr){
+    arr = realloc(arr, g_lenght * sizeof(int));
+}
+
+int g_lenght = 0;
 const char NEWLINE = '\n';
