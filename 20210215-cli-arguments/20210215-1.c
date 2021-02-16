@@ -22,18 +22,10 @@ int main(void){
 
     printf("%s\n", month_name(n));
 
-
-
-
-
-
-
-
     return 0;
 }
 
 char *month_name(int n){
-    int *p = NULL;
 
     static char *name[] = {
         "Illegal month",
@@ -43,8 +35,9 @@ char *month_name(int n){
         "October", "November", "December"
     };
 
-    
-    p = name;
+    while( n < 1 || n > 12){
+        return name[0];
+    }
 
-    return p + n;
+    return name[n];
 }
