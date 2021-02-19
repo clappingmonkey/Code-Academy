@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Направете две функции и извикайте желаната функция с
-указател към функция, съобразно знака, подаден от командния ред: а.оut
-20 + 3 */
+/* Добавете към горния код функции за умножение
+и деление. */
 
 int fnPlus(int nA, int nB);
 int fnMinus(int nA, int nB);
+int fnMultipl(int nA, int nB);
+int fnDiv(int nA, int nB);
 
 int main(int argc, char *argv[]){
     int (*pfCalc) (int, int) = NULL;
@@ -17,6 +18,10 @@ int main(int argc, char *argv[]){
         pfCalc = fnMinus;
     }else if('+' == argv[2][0]){
         pfCalc = fnPlus;
+    }else if('x' == argv[2][0] || '.' == argv[2][0]){
+        pfCalc = fnMultipl;
+    }else if('/' == argv[2][0]){
+        pfCalc = fnDiv;
     }
 
     (NULL == pfCalc) ? 0 : printf("\nResult: %d\n",(*pfCalc) (atoi(argv[1]), atoi(argv[3])) );
@@ -30,4 +35,10 @@ int fnPlus(int nA, int nB){
 }
 int fnMinus(int nA, int nB){
     return nA - nB;
+}
+int fnMultipl(int nA, int nB){
+    return nA * nB;
+}
+int fnDiv(int nA, int nB){
+    return nA / nB;
 }
