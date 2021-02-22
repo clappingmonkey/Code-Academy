@@ -19,22 +19,22 @@ int main(void){
         }
     }
 
-    struct point a = {7, 3};
-    struct point b = {4, 7};
-    struct point c = {10, 7};
-    arr1[a.m_x][a.m_y] = 'a';
-    arr1[b.m_x][b.m_y] = 'b';
-    arr1[c.m_x][c.m_y] = 'c'; 
+    struct point a = {7, 8};
+    struct point b = {10, 5};
+    struct point c = {10, 11};
+    arr1[a.m_x][a.m_y] = '@';
+    arr1[b.m_x][b.m_y] = '@';
+    arr1[c.m_x][c.m_y] = '@'; 
 
-  /*   for(i = b.m_x; i < a.m_x; i--){
-        for(j = b.m_y; j<  c.m_y; j++){
+   for(i = b.m_x; i >= a.m_x; i--){
+        for(j = b.m_y; j <=  c.m_y; j++){
             arr1[i][j] = '@';
         }
         b.m_y++;
         c.m_y--;
-    } */
+    } 
 
-    printf("\nThe matrix is :\n");
+    printf("\nThe triangle is :\n");
     for (i = 0; i < SIZE; i++){
         for (j = 0; j < SIZE; j++){
             printf("%4c", arr1[i][j]);
