@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-/* Напишете обединение от число и низ, както и описател с изброим
-тип за съдържанието на обединението. Напишете функция, която
-получава указател към обединението и изброимия тип и извежда
-съответно низ или число. */
+/* Напишете функция, която преобразува число в низ и обратното,
+като използва описанието от предишната задача. */
 
 union sample{
     int m_a;
@@ -27,6 +26,17 @@ int main(void){
 
     print(&testU, &testE);
 
+    if(testE == VAR_STR){
+        testU.m_a = atoi(testU.m_str);
+        *testU = VAR_INT;
+        print(&testU, &testE);
+    }else if(testE == VAR_INT){
+        itoa(testU.m_a, testU.m_str, 10);
+        *pE = VAR_STR;
+        print(&testU, &testE);
+        
+    }
+
     return 0;
 }
 
@@ -34,6 +44,7 @@ void print(union sample *pU, enum desc *pE){
     switch(*pE){
     case VAR_INT:
         printf("%d\n", pU->m_a);
+
         break;
 
     case VAR_STR:
