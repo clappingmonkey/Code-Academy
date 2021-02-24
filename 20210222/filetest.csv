@@ -1,0 +1,21 @@
+m_a, m_str, m_b, enum
+5,test,3.141592,0
+5,test,3.141592,1
+5,just test,3.141592,0
+1,test,3.141592,1
+5,testing,3.141592,0
+9,testing,3.141592,1
+4,just test,3.141592,0
+7,just test,3.141592,1
+2,just test,3.141592,0
+3,testing,3.141592,1
+3,test,3.141592,0
+2,testing,3.141592,1
+2,test,3.141592,0
+10,testing,3.141592,1
+0,testing,3.141592,0
+9,just test,3.141592,1
+4,testing,3.141592,0
+5,test,3.141592,1
+2,just test,3.141592,0
+4,test,3.141592,1
