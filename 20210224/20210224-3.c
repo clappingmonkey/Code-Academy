@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-/*  */
+/* Реализирайте условна компилация в зависимост от макрос
+DEBUG (дефиниране на макрос през компилатора: gcc -DDEBUG) */
 
 
 void debugMsg(const char *pszMsg){
@@ -12,7 +13,7 @@ void debugMsg(const char *pszMsg){
 
 int main(void){
 
-    debugMsg("Debug msg");
+    debugMsg("lalal");
 
 
 
