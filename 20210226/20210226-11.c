@@ -12,12 +12,11 @@ typedef struct node{
 
 int main(void){
 
-    typedef t_node *t_ptr;
+    t_node *test = malloc(sizeof(t_node));
 
-    t_node s = (t_ptr)malloc(sizeof(t_node));
-    printf("%d\n", sizeof(s));
+    printf("The memory size of test is %ld wtih address %p\n", sizeof(test), test );
 
-    free(s);
+    free(test);
 
     return 0;
 }
