@@ -31,7 +31,7 @@ void ascSortArr(int *arr);
 int main(void){
     srand(time(NULL));
 
-    t_storage *list = (t_storage*)malloc(c_size * sizeof(int));
+    t_storage *list = (t_storage*)malloc(3 * sizeof(int));
 
     storageFiller(list);
 

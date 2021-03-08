@@ -27,7 +27,6 @@ int main(void){
 
 void menu(){
     int dir = 0, newI = 0, newJ = 0, i = 0, j = 0, oldI = 0, oldJ = 0;
-    int size = 7;
 
     int arr[7][7] = {{3, 3, 2, 4, 3, 1, 2},
                     {2, 4, 2, 3, 2, 4, 3},
