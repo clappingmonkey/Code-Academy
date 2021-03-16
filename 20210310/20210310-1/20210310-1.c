@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-void compareFiles(FILE *file1, FILE *file2);
-
-extern int g_pos, g_breakLine1, g_breakLine2;
+#include "func.h"
 
 int main(void){
     char c;
@@ -39,28 +36,3 @@ int main(void){
 
     return 0;
 }
-
-void compareFiles(FILE *file1, FILE *file2){
-    char ch1 = getc(file1);
-    char ch2 = getc(file2);
-    char c;
-    int line = 1;
-
-    while (ch1 != EOF && ch2 != EOF){
-        g_pos++;
-        if (ch1 == '\n' && ch2 == '\n'){
-            line++;
-            g_breakLine1 = ftell(file1);
-            g_breakLine2 = ftell(file2);
-            g_pos = 0;
-        }if(ch1 != ch2){
-            break;
-        }
-        ch1 = getc(file1);
-        ch2 = getc(file2);
-    }
-    printf("Line on which the files are different: %d pos %d\n", line, g_pos);
-    }
-
-int g_pos = 0;
-int g_breakLine1 = 0, g_breakLine2 = 0;
