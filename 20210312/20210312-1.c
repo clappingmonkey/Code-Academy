@@ -6,18 +6,9 @@
 Използвайте следния елемент на динамичния списък:
 typedef struct t_node { int m_nValue; t_node* m_pNext; } t_node; */
 
-typedef struct t_node{
-    int m_data;
-    t_node *m_next;
-}t_node;
-
 t_node *start;
 
-void init();
-int addAfter(int n, int k);
-int add(int *data);
-void printAfter(t_node *curr);
-t_node* dellElemReturnAfter(int *n, int k);
+
 
 int main(void){
     init();

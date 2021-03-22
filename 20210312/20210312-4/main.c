@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "global.h"
 
-/* Task #24 */
-
 int main(void){
 
     int graph[V][V] = {{0, 7, 9, INF, INF, 14},

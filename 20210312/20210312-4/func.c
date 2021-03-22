@@ -15,7 +15,6 @@ void algo(int graph[][V]){
             for(j = 0; j < V; j++){
                 if(path[i][k] + path[k][j] < path[i][j]){
                     path[i][j] = path[i][k] + path[k][j];
-                    printf("for [%d][%d] shortest distance is: %d\n", i, j, path[i][j]);
                 }
             }
         }
@@ -52,5 +51,4 @@ void printGraph(int graph[][V]){
         }
         printf("\n");
     }
-    printf("\n");
 }
