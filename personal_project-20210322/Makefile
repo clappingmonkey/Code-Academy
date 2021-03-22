@@ -1,7 +1,8 @@
 CC=gcc
-FLAGS=-Wall
+FLAGS=-Wall -c
 ## wildcard for all .c files
-SRC=$(wildcard *.c) 
+SRC=$(wildcard *.c)
+OBJ=$(wildcard *.o)
 ## var name for the target and the output file
 VAR=build
 
@@ -15,10 +16,13 @@ else
     TARGET=$(VAR)
 endif
 
+objects: $(SRC)
+	$(CC) $(FLAGS) $^  
+
 ## $^ returns list of the names of
 ## all the prerequisites, with spaces between them
-$(VAR): $(SRC)
-	$(CC) $^ $(FLAGS) -o $(TARGET)
+$(VAR): $(OBJ)
+	$(CC) $^ -o $(TARGET)
 
 clean:
-	$(RM) $(TARGET)
+	$(RM) $(TARGET) $(OBJ)
