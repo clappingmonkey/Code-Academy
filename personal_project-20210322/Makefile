@@ -1,21 +1,24 @@
 CC=gcc
 FLAGS=-Wall
-FILE=exeMe
-LIB=head.c
-LIB_OBJ=head.o
+## wildcard for all .c files
+SRC=$(wildcard *.c) 
+## var name for the target and the output file
+VAR=build
 
 ### unified cross-platform clean function
 #checks for env var of win 
 ifeq ($(OS),Windows_NT)
     RM=del /Q
-    TARGET=test.exe
+    TARGET=$(VAR).exe
 else
     RM=rm -f
-    TARGET=test
+    TARGET=$(VAR)
 endif
 
-all:
-	$(CC) $(FLAGS) $(FILE).c -o $(TARGET)
+## $^ returns list of the names of
+## all the prerequisites, with spaces between them
+$(VAR): $(SRC)
+	$(CC) $^ $(FLAGS) -o $(TARGET)
 
 clean:
-	$(RM) $(TARGET) $(LIB_OBJ)
+	$(RM) $(TARGET)
