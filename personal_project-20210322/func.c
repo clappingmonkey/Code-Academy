@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "global.h"
 
-void algo(int graph[][V]){
+void algo(int graph[V][V]){
     int path[V][V], i, j, k;
 
     for(i = 0; i < V; i++){
@@ -15,7 +15,7 @@ void algo(int graph[][V]){
             for(j = 0; j < V; j++){
                 if(path[i][k] + path[k][j] < path[i][j]){
                     path[i][j] = path[i][k] + path[k][j];
-                    printf("for [%d][%d] shortest distance is: %d\n", i, j, path[i][j]);
+                    printf("for [%d][%d] and [%d][%d] the shortest distance is: %d\n", i, k, k, j, path[i][j]);
                 }
             }
         }
@@ -23,7 +23,7 @@ void algo(int graph[][V]){
     printSol(path);
 }
 
-void printSol(int path[][V]){
+void printSol(int path[V][V]){
     printf("\nThis matrix shows the shortest distances "
     "between every pair of vertices:\n");
 
@@ -39,7 +39,7 @@ void printSol(int path[][V]){
     }
 }
 
-void printGraph(int graph[][V]){
+void printGraph(int graph[V][V]){
     printf("The original matrix is:\n");
 
     for(int i = 0; i < V; i++){
