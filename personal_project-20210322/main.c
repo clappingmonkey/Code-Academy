@@ -6,7 +6,7 @@
 int main(void){
 
     int graph[V][V] = {{0, 7, 9, INF, INF, 14},
-                       {7, 0, 10, 15, INF, INF},
+                       {5, 0, 10, 15, INF, INF},
                        {9, 10, 0, 11, INF, 2},
                        {INF, 15, 11, 0, 6, INF},
                        {INF, INF, INF, 6, 0, 9},

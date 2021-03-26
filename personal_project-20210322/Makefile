@@ -1,6 +1,6 @@
 CC=gcc
 FLAGS=-Wall -c
-## wildcard for all .c files
+## wildcard for all .c and .o files
 SRC=$(wildcard *.c)
 OBJ=$(wildcard *.o)
 ## var name for the target and the output file
@@ -17,7 +17,7 @@ else
 endif
 
 objects: $(SRC)
-	$(CC) $(FLAGS) $^  
+	$(CC) $(FLAGS) $^
 
 ## $^ returns list of the names of
 ## all the prerequisites, with spaces between them
