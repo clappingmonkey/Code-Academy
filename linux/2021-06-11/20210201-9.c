@@ -58,5 +58,5 @@ void reverse(char s[]){
         s[i] = s[j];
         s[j] = temp;
     }
-    printf("The reversed array is: %s\n", s);
+    printf("The the converted and reversed array is: %s\n", s);
 }
