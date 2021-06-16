@@ -15,19 +15,18 @@ int main(void){
 
     while(1){
         passGen();
-        
+
         printf("\nDo you like the password I gave you? (y or n) ");
         choice = getchar();
 
         if(choice == '\n'){
             choice = getchar();
         }
-        
         if(choice == 'Y' || choice == 'y'){
-            printf("Okay. Good day and god speed.\n");            
+            printf("Okay. Good day and god speed.\n");
             break;
         }
-    } 
+    }
     return 0;
 }
 
@@ -40,5 +39,5 @@ void passGen(void){
 
     for(index = 0; index < 6; index++){
         printf("%c", point[rand() % (sizeof point--)]);
-    }    
+    }
 }

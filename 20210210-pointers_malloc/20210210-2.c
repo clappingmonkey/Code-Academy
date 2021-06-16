@@ -11,7 +11,7 @@ Reversal is : .oriM ma I
 
 void reverse(char *arr, int i);
 
-int main(){
+int main(void){
     char c;
     char arr[100];
     int i = 0;
@@ -37,5 +37,5 @@ void reverse(char *arr, int i){
         printf("%c", *point);
         point--;
         i--;
-    }    
+    }
 }
