@@ -30,7 +30,7 @@ do
 	./$TEST_FILE $test3
 	STATUS=$? && check_status STATUS
 
-    ./$TEST_FILE $test4
+	./$TEST_FILE $test4
 	STATUS=$? && check_status STATUS
 
 done
